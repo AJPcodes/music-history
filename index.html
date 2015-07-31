@@ -18,91 +18,98 @@
 
 	  </nav>
 
-	  <div class="selector">
-	    <form action="form.html" method="post">
+		<div class="flex_container">
 
-	      <label for="song_length">Song Length:</label>
-	      <input type="range" name="song_length" min="0" max="240" step="1" value="0" />
+		  <div class="selector">
+		    <form action="form.html" method="post">
 
-	      <label for="artist">Artist:</label>
-	      <input list="artist_list" name="artist" placeholder="Artist">
-		      <datalist id="artist_list">
-		        <option value="Daft Punk">
-	          <option value="Capital Citites">
-	          <option value="St. Paul and the Broken Bones">
-	          <option value="Robyn">
-		        <option value="Pilot Rouge">
-		      </datalist>
+		      <label for="song_length">Song Length:</label>
+		      <input type="range" name="song_length" min="0" max="240" step="1" value="0" />
 
-	      <label for="album">Album:</label>
-	      <input list="album_list" name="album" placeholder="Album">
-		      <datalist id="album_list">
-		        <option value="Random Access Memories - Daft Punk">
-		        <option value="Discovery - Daft Punk">
-		        <option value="Human After All - Daft Punk">
-		        <option value="In a Tidal Wave of Mystery - Capital Cities">
-		        <option value="Half the City - St. Paul and the Broken Bones">
-		        <option value="Robyn - Robyn">
-		        <option value="Body Talk - Robyn">
-		        <option value="Do It Again - Robyn">
-		        <option value="Legends - Pilot Rouge">
-		      </datalist>
+		      <label for="artist">Artist:</label>
+		      <input list="artist_list" name="artist" placeholder="Artist">
+			      <datalist id="artist_list">
+			        <option value="Daft Punk">
+		          <option value="Capital Citites">
+		          <option value="St. Paul and the Broken Bones">
+		          <option value="Robyn">
+			        <option value="Pilot Rouge">
+			      </datalist>
 
-	      <label for="genre">Genre:</label>
+		      <label for="album">Album:</label>
+		      <input list="album_list" name="album" placeholder="Album">
+			      <datalist id="album_list">
+			        <option value="Random Access Memories - Daft Punk">
+			        <option value="Discovery - Daft Punk">
+			        <option value="Human After All - Daft Punk">
+			        <option value="In a Tidal Wave of Mystery - Capital Cities">
+			        <option value="Half the City - St. Paul and the Broken Bones">
+			        <option value="Robyn - Robyn">
+			        <option value="Body Talk - Robyn">
+			        <option value="Do It Again - Robyn">
+			        <option value="Legends - Pilot Rouge">
+			      </datalist>
 
-	      <div class="checkboxes">
+		      <label for="genre">Genre:</label>
 
-	        <input type="checkbox" name="rock" value="rock" />
-	        <p>Rock</p>
+		      <div class="checkboxes">
+						<div class="checkbox">
+			        <input type="checkbox" name="rock" value="rock" />
+			        <p>Rock</p>
+			      </div>
+						<div class="checkbox">
+			        <input type="checkbox" name="pop" value="pop" />
+			        <p>Pop</p>
+						</div>
+						<div class="checkbox">
+			        <input type="checkbox" name="blues" value="blues" />
+			        <p>Blues</p>
+						</div>
+						<div class="checkbox">
+			        <input type="checkbox" name="classical" value="classical" />
+			        <p>Classical</p>
+						</div>
+						<div class="checkbox">
+			        <input type="checkbox" name="jazz" value="jazz" />
+			        <p>Jazz</p>
+						</div>
+						<div class="checkbox">
+			        <input type="checkbox" name="hop_hop" value="hip_hop" />
+			        <p>Hip Hop</p>
+						</div>
+		      </div>
 
-	        <input type="checkbox" name="pop" value="pop" />
-	        <p>Pop</p>
-
-	        <input type="checkbox" name="blues" value="blues" />
-	        <p>Blues</p>
-
-	        <input type="checkbox" name="classical" value="classical" />
-	        <p>Classical</p>
-
-	        <input type="checkbox" name="jazz" value="jazz" />
-	        <p>Jazz</p>
-
-	        <input type="checkbox" name="hop_hop" value="hip_hop" />
-	        <p>Hip Hop</p>
-
-	      </div>
-
-	      <button>Filter</button>
+		      <button>Filter</button>
 
 
-	    </form>
+		    </form>
 
-	  </div>
+		  </div>
 
-	  <div class="history">
-	    <div class="wrapper" id="addSongsHere">
-	    <h3>Doin' It Right</h3>
-	    <p>Daft Punk</p> |
-	    <p>Random Access Memories</p> |
-	    <p>Electro Pop</p>
+		  <div class="history">
+		    <div class="wrapper" id="addSongsHere">
+		    <h3>Doin' It Right</h3>
+		    <p>Daft Punk</p> |
+		    <p>Random Access Memories</p> |
+		    <p>Electro Pop</p>
 
-	    <h3>Fembot</h3>
-	    <p>Robyn</p> |
-	    <p>Body Talk</p> |
-	    <p>Pop</p>
+		    <h3>Fembot</h3>
+		    <p>Robyn</p> |
+		    <p>Body Talk</p> |
+		    <p>Pop</p>
 
-	    <h3>Ferrah Fawcett Hair</h3>
-	    <p>Capital Cities</p> |
-	    <p>In a Tidal Wave of Mystery</p> |
-	    <p> Indie Pop</p>
+		    <h3>Ferrah Fawcett Hair</h3>
+		    <p>Capital Cities</p> |
+		    <p>In a Tidal Wave of Mystery</p> |
+		    <p> Indie Pop</p>
 
-	    <h3>Sunrust</h3>
-	    <p>Pilot Rouge</p> |
-	    <p>Legends</p> |
-	    <p>Indie Rock</p>
-	  </div>
-	  </div>
-
+		    <h3>Sunrust</h3>
+		    <p>Pilot Rouge</p> |
+		    <p>Legends</p> |
+		    <p>Indie Rock</p>
+		  </div>
+		  </div>
+		</div>
 	  <footer>
 	    <p></p>
 	    <footer>

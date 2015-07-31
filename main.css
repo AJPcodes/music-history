@@ -16,7 +16,7 @@ html {
 body {
   	width: 90%;
   	height: 90%;
-	margin: 5% 5%;
+		margin: 5% 5%;
 }
 
 /*Nav Stlyes*/
@@ -24,7 +24,7 @@ body {
 nav{
 	background-color:  #eaec4a;
 	width: 100%;
-	margin-bottom: 2.5%;
+	margin-bottom: 10px;
 	line-height: 3.5em;
 	border: 2px solid black;
 	padding: 0 20px;
@@ -41,19 +41,25 @@ nav a.selected {
 	color: #000;
 }
 
+/*Flex box container*/
 
+.flex_container {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+}
 
 /*.selector Form Styles*/
 
 .selector {
-	height: 28em;
+/*	height: 28em;
 	width: 28.75%;
-	float: left;
+	float: left;*/
+	flex: 1;
 	background-color:  #b854f0;
 	margin: 0;
 	border: 2px solid black;
 	padding: 20px;
-	box-sizing: border-box;
 }
 
 .selector label, .selector input {
@@ -75,20 +81,26 @@ nav a.selected {
 
 .selector .checkboxes {
 	margin: 1em 0 1.5em;
-	float: left;
-	width: 90%;
+	display: flex;
+	flex-flow: row wrap;
+	width: 95%;
+}
+
+.checkboxes .checkbox {
+	flex: 1 50%;
 }
 
 .selector  .checkboxes input {
 	display: inline-block;
-	width: 7%;
+	width: 20%;
+	margin: 1em 0;
 }
 
 .selector .checkboxes p {
 	display: inline-block;
-	width: 40%;
-	margin-top: 1em;
-  font-size: .6em;
+	width: 70%;
+  font-size: 1em;
+  line-height: 3.5em;
 }
 
 
@@ -103,13 +115,13 @@ nav a.selected {
 /*.History Styles*/
 
 .history {
-	height: 28em;
+	/*height: 28em;
 	width: 68.75%;
-	float: left;
+	float: left;*/
+	flex: 4;
 	background-color: #94cd4b;
-	margin-left: 2.5%;
+	margin-left: 10px;
 	border: 2px solid black;
-	box-sizing: border-box;
 	padding: 5%;
 	overflow: auto;
 }
@@ -119,6 +131,7 @@ nav a.selected {
 
 
 }
+
 .history h3 {
 
 	line-height: 1em;
