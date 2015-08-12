@@ -1,0 +1,85 @@
+{
+	"songs": [
+		{
+			"title":"Starlight",
+			"artist": "Muse",
+			"album": "Black Holes and Revelations"
+		},
+		{
+			"title":"Get Lucky",
+			"artist": "Daft Punk",
+			"album": "Random Access Memories"
+		},
+		{
+			"title":"Holding on for Life",
+			"artist": "Broken Bells",
+			"album": "After the Disco"
+		},
+		{
+			"title":"Legs",
+			"artist": "ZZTop",
+			"album": "Eliminator",
+			"genre": "Genre"
+		},
+		{
+			"title":"The Logical Song",
+			"artist": "Supertramp",
+			"album": "Breakfast in America",
+			"genre": "Genre"
+		},
+		{
+			"title":"Another Brick in the Wall",
+			"artist": "Pink Floyd",
+			"album": "The Wall",
+			"genre": "Rock"
+		},
+		{
+			"title":"Welcome to the Jungle",
+			"artist": "Guns & Roses",
+			"album": "Appetite for Destruction",
+			"genre": "Rock"
+		},
+		{
+			"title":"Ironic",
+			"artist": "Alanis Morisette",
+			"album": "Jagged Little Pill",
+			"genre": "Pop"
+		},
+		{
+			"title": "Shake it Off",
+			"artist": "Taylor Swift",
+			"album": "1989",
+			"genre": "Pop"
+		},
+		{
+			"title": "Budapest",
+			"artist": "George Ezra",
+			"album": "Wanted on Voyage",
+			"genre": "Pop"
+		},
+		{
+			"title": "Doin' It Right",
+			"artist": "Daft Punk",
+			"album": "Random Access Memories",
+			"genre": "Electro-Pop"
+		},
+		{
+			"title": "Fembot",
+			"artist": "Robyn",
+			"album": "Body Talk",
+			"genre": "Pop"
+		},
+		{
+			"title": "Ferrah Fawcett Hair",
+			"artist": "Capital Cities",
+			"album": "In a Tidal Wave of Mystery",
+			"genre": "Indie Pop"
+		},
+		{
+			"title": "Sunrust",
+			"artist": "Pilot Rouge",
+			"album": "Legends",
+			"genre": "Indie Rock"
+		}
+	]
+}
