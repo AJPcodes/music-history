@@ -1,69 +1,70 @@
-// Use JavaScript arrays, loops, and innerHTML to show the music you love.
+//Functions
 
-// Students must use JavaScript to create a list of songs in the index.html file for their Music History project. Have them download the resources/js-101.js file, which contains an array of strings with song information.
+//Function to remove songs, called by clicking "remove"
+var removeSong = function(){
+	$(this).parent().remove();
+}; //end remove song
 
-// Each student must add one song to the beginning and the end of the array.
-// Loop over the array and remove any words or characters that obviously don't belong.
-// Students must find and replace the > character in each item with a - character.
-// Must add each string to the DOM in index.html in the main content area.
-
-
-
-var songs = [];
-
-var addSongEnd = function(title, artist, album, genre) {
-	song = title + " - by " + artist + " on the album " + album + " : " + genre;
-	songs.push(song);
-};
-var addSongStart = function(title, artist, album, genre) {
-	song = title + " - by " + artist + " on the album " + album + " : " + genre;
-	songs.unshift(song);
-};
-
-addSongEnd("Legs", "ZZTop", "Eliminator", "genre");
-addSongEnd("The Logical Song", "Supertramp", "Breakfast in America", "genre");
-addSongStart("Another Brick in the Wall", "Pink Floyd", "The Wall", "Rock");
-addSongEnd("Welcome to the Jungle", "Guns & Roses", "Appetite for Destruction", "Rock");
-addSongEnd("Ironic", "Alanis Morisette", "Jagged Little Pill", "Pop");
-addSongEnd("Shake it Off", "Taylor Swift", "1989", "Pop");
-addSongStart("Budapest", "George Ezra", "Wanted on Voyage", "Pop");
-addSongStart("Doin' It Right", "Daft Punk", "Random Access Memories", "Electro Pop");
-addSongStart("Fembot", "Robyn", "Body Talk", "Pop");
-addSongStart("Ferrah Fawcett Hair", "Capital Cities", "In a Tidal Wave of Mystery", "Indie Pop");
-addSongStart("Sunrust", "Pilot Rouge", "Lengends", "Indie Rock");
-
-for (i = 0; i < songs.length; i++) {
-	var songString = songs[i];
+$('#addMoreSongs').css('display', 'none');
 
 
-//need to figure out regular expressions
+//add songs after getting JSON data. Called by add songs buttons
+function addSongsToDOM(songs){
 
-	songString = songString.replace(/[!@#$%^*()]/g, "");
-	songString = songString.replace(">", "-");
-
-	songs[i] = songString;
-}
-
-var writeSongsToDOM = function() {
-
-	//isolate the individual variable strings
-	for (i = 0; i < songs.length; i++) {
+//declare variables
 	var title = "";
-	title = songs[i].slice(0, songs[i].indexOf(" - by"));
-
 	var artist = "";
-	artist = songs[i].slice(songs[i].indexOf(" - by ") + 6, songs[i].indexOf(" on the album"));
-
 	var album = "";
-	album = songs[i].slice(songs[i].indexOf("on the album ") + 13, songs[i].indexOf(" : "));
-
 	var genre = "";
-	genre = songs[i].slice(songs[i].indexOf(" : ") + 3, songs[i].length);
 
-	var historyDiv = document.getElementById('addSongsHere');
-	historyDiv.innerHTML += "<div class='song'><h3>" + title + "</h3> <p> " + artist + "</p> | <p>" + album + "</p> | <p> " + genre +" </p></div>";
-	}
-}
+	var historyDiv = $('#addSongsHere');
 
-writeSongsToDOM();
+//iterate over songs array
+	$.each(songs, function(e, song){
+
+	title = song.title;
+	artist = song.artist;
+	album = song.album;
+	genre = song.genre;
+
+	historyDiv.append("<div class='song'><h3>" + title + "</h3> <p> " + artist + "</p> | <p>" + album + "</p> | <p> " + genre +" </p> <button class='remove'>Remove</button></div>");
+
+
+ });//end each loop
+};// end add songs to DOM
+
+
+//ajax request for songs.json
+$('#addSongs').click(function(e){
+		 e.preventDefault();
+		$.ajax({
+		  url: "./json-files/songs.json",
+		  context: document.body
+		}).done(function(response) {
+		  addSongsToDOM(response.songs);
+		});
+		$('#addSongs').css('display', 'none');
+		$('#addMoreSongs').css('display', 'inline-block');
+
+});//end addSongs
+
+
+//Add more song. AJAX for moreSongs.json
+$('#addMoreSongs').click(function(e){
+		 e.preventDefault();
+		$.ajax({
+		  url: "./json-files/moreSongs.json",
+		  context: document.body
+		}).done(function(response) {
+		  addSongsToDOM(response.songs);
+		});
+
+		$('#addMoreSongs').css('display', 'none');
+
+}); //End Add More Songs
+
+
+// Event Handlers!
+//Remove songs on click
+$(document).on('click', ".remove", removeSong);
 

@@ -3,17 +3,20 @@
 		{
 			"title":"Starlight",
 			"artist": "Muse",
-			"album": "Black Holes and Revelations"
+			"album": "Black Holes and Revelations",
+			"genre": "Genre"
 		},
 		{
 			"title":"Get Lucky",
 			"artist": "Daft Punk",
-			"album": "Random Access Memories"
+			"album": "Random Access Memories",
+			"genre": "Genre"
 		},
 		{
 			"title":"Holding on for Life",
 			"artist": "Broken Bells",
-			"album": "After the Disco"
+			"album": "After the Disco",
+			"genre": "Genre"
 		},
 		{
 			"title":"Legs",
@@ -50,36 +53,6 @@
 			"artist": "Taylor Swift",
 			"album": "1989",
 			"genre": "Pop"
-		},
-		{
-			"title": "Budapest",
-			"artist": "George Ezra",
-			"album": "Wanted on Voyage",
-			"genre": "Pop"
-		},
-		{
-			"title": "Doin' It Right",
-			"artist": "Daft Punk",
-			"album": "Random Access Memories",
-			"genre": "Electro-Pop"
-		},
-		{
-			"title": "Fembot",
-			"artist": "Robyn",
-			"album": "Body Talk",
-			"genre": "Pop"
-		},
-		{
-			"title": "Ferrah Fawcett Hair",
-			"artist": "Capital Cities",
-			"album": "In a Tidal Wave of Mystery",
-			"genre": "Indie Pop"
-		},
-		{
-			"title": "Sunrust",
-			"artist": "Pilot Rouge",
-			"album": "Legends",
-			"genre": "Indie Rock"
 		}
 	]
 }
