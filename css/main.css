@@ -20,7 +20,8 @@ nav {
 
 nav a {
   font-size: 1.25em;
-  padding: 0 25px; }
+  padding: 0 25px;
+  text-align: center; }
 
 nav a.selected {
   text-decoration: none;
@@ -115,6 +116,9 @@ nav a.selected {
   color: #FFB4B0;
   text-shadow: 1px 1px black; }
 
+.history button {
+  display: block; }
+
 /*Footer*/
 footer {
   clear: both; }
@@ -127,5 +131,17 @@ nav.hidden {
 }
 
 */
+@media only screen and (max-width: 768px) {
+  nav {
+    height: 15em; }
+
+  nav, .selector {
+    border-bottom: 0px; }
+
+  .history {
+    border: 4px solid black; }
+
+  body {
+    margin: 0; } }
 
 /*# sourceMappingURL=main.css.map */

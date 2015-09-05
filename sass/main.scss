@@ -43,6 +43,7 @@ nav {
 nav a {
 	font-size: 1.25em;
 	padding: 0 25px;
+	text-align: center;
 }
 
 nav a.selected {
@@ -174,6 +175,11 @@ nav a.selected {
 	text-shadow: 1px 1px black;
 }
 
+.history button {
+	display: block;
+
+}
+
 
 /*Footer*/
 footer {
@@ -188,3 +194,26 @@ nav.hidden {
 }
 
 */
+
+//media qeury
+
+@media only screen  and (max-width : 768px) {
+
+	nav {
+		height: 15em;
+	}
+
+	nav, .selector {
+		border-bottom: 0px;
+	}
+
+
+	.history {
+		border: $border;
+	}
+
+	body {
+		margin: 0;
+	}
+
+}

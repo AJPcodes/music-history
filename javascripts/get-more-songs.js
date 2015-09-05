@@ -1,18 +1,20 @@
-define(['jquery','dom-access'], function($, domAccess) {
+define(['jquery'], function($, domAccess) {
 	//ajax request for songs.json
 
-$('#addMoreSongs').click(function(e){
-		 e.preventDefault();
-		$.ajax({
-		  url: "./../json-files/moreSongs.json",
-		  context: document.body
-		}).done(function(response) {
-		  domAccess.addSongsToDOM(response.songs);
-		});
+	return {
 
-		$('#addMoreSongs').css('display', 'none');
+		getSongs: function(callback){
 
-}); //End Add More Songs
+			$.ajax({
+			url: "./../json-files/moreSongs.json",
+			context: document.body
+			}).done(function(response) {
+			songs = response.songs;
+			console.log(songs);
+			callback(songs);
+			});
 
+		} //end getSongs
+	};
 
 });
