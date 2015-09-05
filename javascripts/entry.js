@@ -11,5 +11,5 @@ requirejs.config({
 
 });
 
-require(['sandwichMaker'], function() {} );
+require(['main'], function() {} );
 

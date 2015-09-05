@@ -5,29 +5,37 @@
 
 	<head>
 	  <title>Music History Project</title>
+	  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" type="text/css" href="main.css">
+	  <link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 
 	<body>
+	<div class="container-fluid">
 
-	  <nav>
-	    <a href="#" class="selected">View Music</a> |
-	    <a href="#">Add Music</a> |
-	    <a href="#">Profile</a>
+	<div class="row">
+		<div class="col-sm-12">
 
+		  <nav class='row'>
+
+		    <a href="#" class="selected col-sm-3 col-sm-offset-1">View Music</a>
+		    <a href="#" class='col-sm-3'>Add Music</a>
+		    <a href="#" class='col-sm-3'>Profile</a>
+
+		  </nav>
+
+		<!--   <nav class="hidden">
+		    <a href="#" class="selected">View Music</a> |
+		    <a href="#">Add Music</a> |
+		    <a href="#">Profile</a>
 	  </nav>
+ -->
+		</div>
+	</div>
 
-	  <nav class="hidden">
-	    <a href="#" class="selected">View Music</a> |
-	    <a href="#">Add Music</a> |
-	    <a href="#">Profile</a>
+		<div class="row">
+		  <div class="selector col-sm-3">
 
-	  </nav>
-
-		<div class="flex_container">
-
-		  <div class="selector">
 		    <form action="form.html" method="post">
 
 		      <label for="song_length">Song Length:</label>
@@ -59,43 +67,50 @@
 
 		      <label for="genre">Genre:</label>
 
-		      <div class="checkboxes">
-						<div class="checkbox">
+		      <div class="checkboxes row">
+
+						<div class="checkbox col-xs-12 col-sm-5">
 			        <input type="checkbox" name="rock" value="rock" />
 			        <p>Rock</p>
 			      </div>
-						<div class="checkbox">
+
+						<div class="checkbox col-xs-12 col-sm-5">
 			        <input type="checkbox" name="pop" value="pop" />
 			        <p>Pop</p>
 						</div>
-						<div class="checkbox">
+
+						<div class="checkbox col-xs-12 col-sm-5">
 			        <input type="checkbox" name="blues" value="blues" />
 			        <p>Blues</p>
 						</div>
-						<div class="checkbox">
+
+						<div class="checkbox col-xs-12 col-sm-5">
 			        <input type="checkbox" name="classical" value="classical" />
 			        <p>Classical</p>
 						</div>
-						<div class="checkbox">
+
+						<div class="checkbox col-xs-12 col-sm-5">
 			        <input type="checkbox" name="jazz" value="jazz" />
 			        <p>Jazz</p>
 						</div>
-						<div class="checkbox">
+
+						<div class="checkbox col-xs-12 col-sm-5">
 			        <input type="checkbox" name="hop_hop" value="hip_hop" />
 			        <p>HipHop</p>
 						</div>
-		      </div>
 
-		      <button>Filter</button>
+		     	 </div>
 
-		    </form>
+		      	<button>Filter</button>
 
-		  </div>
+		    	</form>
 
-		  <div class="history">
+				</div>
+
+		  	<div class="history col-sm-9">
 		      <button id="addSongs">Populate Songs</button>
 
-		    <div class="wrapper" id="addSongsHere">
+		    	<div class="wrapper" id="addSongsHere">
 
 <!-- example formating below -->
 
@@ -121,15 +136,17 @@
 		    <p>Legends</p> |
 		    <p>Indie Rock</p>
 		     -->
-		  </div>
-		  <button id="addMoreSongs">Add More Songs</button>
-		  </div>
+		  		</div>
+		  		<button id="addMoreSongs">Add More Songs</button>
+
+			</div>
 		</div>
+
+
 	  <footer>
 	    <p></p>
 	    <footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="main.js"></script>
+	<script data-main="javascripts/entry" src="/bower_components/requirejs/require.js"></script>
 	</body>
 </html>

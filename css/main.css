@@ -1,0 +1,131 @@
+/*General Styles*/
+body {
+  margin: 5%; }
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: Oswald, Sans-serif; }
+
+nav, div.selector, div.history {
+  box-sizing: border-box; }
+
+/*Nav Stlyes*/
+nav {
+  background-color: #FFB4B0;
+  margin-top: 0;
+  line-height: 4.5em;
+  padding: 0 3%;
+  border: 4px solid black;
+  border-bottom: 0px;
+  height: 5em; }
+
+nav a {
+  font-size: 1.25em;
+  padding: 0 25px; }
+
+nav a.selected {
+  text-decoration: none;
+  color: #000; }
+
+/*.selector Form Styles*/
+.selector {
+  /*	height: 28em;
+  	width: 28.75%;
+  	float: left;*/
+  height: 40em;
+  background-color: #4DD7FA;
+  border: 4px solid black;
+  overflow: scroll; }
+
+.selector label, .selector input {
+  margin: 5px; }
+
+.selector label {
+  display: block;
+  padding: 5px; }
+
+.selector form > input {
+  display: block;
+  padding: 5px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid black; }
+
+.selector .checkboxes {
+  margin: 1em 0 1.5em;
+  width: 95%; }
+
+.selector .checkboxes p {
+  font-size: 1em;
+  line-height: 2em;
+  text-align: center; }
+
+.selector .checkbox {
+  margin: 0; }
+
+.selector button {
+  clear: both;
+  display: block;
+  padding: 5px;
+  margin: 2em auto 1em;
+  border: 1px solid black; }
+
+/*.History Styles*/
+.history {
+  height: 40em;
+  background-color: #FEFAC0;
+  border: 4px solid black;
+  border-left: 0px;
+  padding: 5%;
+  overflow: scroll; }
+
+.history .wrapper {
+  margin: 1em 0; }
+
+.song {
+  background-color: #F5FFFA;
+  padding: 1em; }
+
+.song:nth-child(2n+1) {
+  background-color: #FFF5EE;
+  padding: 1em; }
+
+.history .song:nth-child(2n+1) h3,
+.history .song:nth-child(2n+1) p {
+  color: #4DD7FA;
+  text-shadow: 1px 1px black; }
+
+.history .song:first-child h3,
+.history .song:first-child p {
+  font-weight: bold;
+  color: #785616; }
+
+.history h3 {
+  line-height: 1em;
+  font-size: 1.5em;
+  margin: .75em 1em;
+  color: #FFB4B0;
+  text-shadow: 1px 1px black; }
+
+.history p {
+  display: inline-block;
+  line-height: 2.5em;
+  margin: 0 1em 0;
+  text-align: center;
+  font-size: 1em;
+  color: #FFB4B0;
+  text-shadow: 1px 1px black; }
+
+/*Footer*/
+footer {
+  clear: both; }
+
+/*Hidden Nav
+
+nav.hidden {
+	visibility: hidden;
+	position: static;
+}
+
+*/
+
+/*# sourceMappingURL=main.css.map */
