@@ -17,12 +17,12 @@ module.exports = function(grunt) {
         tasks: ['jshint']
       },
       sassy: {
-        files: ['./sass/**/*.scss'],
+        files: ['./css/**/*.scss'],
         tasks: ['sass']
       }
     }
   });
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['jshint','sass','watch']);
+  grunt.registerTask('default', ['jshint', 'sass', 'watch']);
 };

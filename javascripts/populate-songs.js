@@ -1,20 +1,19 @@
-define(['jquery'], function($, domAccess) {
+define(['jquery'], function($) {
 
-//ajax request for songs.json
+
 	return {
 
-		getSongs: function(callback){
 
-			$.ajax({
-			url: "./../json-files/songs.json",
-			context: document.body
-			}).done(function(response) {
-			songs = response.songs;
-			console.log(songs);
-			callback(songs);
-			});
+		getSongs : function(callback) {
 
-		} //end getSongs
+				$.ajax({
+				  url: "./../json-files/songs.json",
+				  context: document.body
+				}).done(function(response) {
+				  callback(response.songs);
+				});
+
+			}
 	};
 
 });

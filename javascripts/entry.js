@@ -11,5 +11,4 @@ requirejs.config({
 
 });
 
-require(['main'], function() {} );
-
+require(['jquery','bootstrap','main'], function($, bootstrap, main) {} );
