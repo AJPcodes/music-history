@@ -1,2 +1,6 @@
 .DS_Store
 cow/
+bower_components/
+eliminatedCode/
+node_modules/
+prejqjs.js
