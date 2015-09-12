@@ -10,7 +10,7 @@ define(['jquery'], function($) {
 				  url: "./../json-files/moreSongs.json",
 				  context: document.body
 				}).done(function(response) {
-				  callback(response.songs);
+				  callback(response);
 				});
 
 			}

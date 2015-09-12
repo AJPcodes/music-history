@@ -8,13 +8,18 @@ define(['jquery'], function($) {
 
 		addSongsToDOM : function(songs){
 
-			//declare variables
+				var historyDiv = $('#addSongsHere');
+
+			require(['hbs!../templates/songs'], function(songTemplate) {
+        historyDiv.html(songTemplate(songs));
+      });
+
+			/*
+				//declare variables
 				var title = "";
 				var artist = "";
 				var album = "";
 				var genre = "";
-
-				var historyDiv = $('#addSongsHere');
 
 			//iterate over songs array
 				$.each(songs, function(e, song){
@@ -26,8 +31,9 @@ define(['jquery'], function($) {
 
 				historyDiv.append("<div class='song'><h3>" + title + "</h3> <p> " + artist + "</p> | <p>" + album + "</p> | <p> " + genre +" </p> <button class='remove'>Remove</button></div>");
 
-
 			 });//end each loop
+			*/
+
 			}// end add songs to DOM
 
 

@@ -16,11 +16,14 @@ require(['jquery', 'dom-access','populate-songs','get-more-songs'], function($, 
 
 			});//end addSongs
 
-	$('#addSongs').click(function(e){
+	$('#addMoreSongs').click(function(e){
 					 e.preventDefault();
 					getMoreSongs.getSongs(domAccess.addSongsToDOM);
 					$('#addMoreSongs').css('display', 'none');
 
 			});//end addSongs
+
+
+
 
 });
