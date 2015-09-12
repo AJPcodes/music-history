@@ -24,6 +24,12 @@ require(['jquery', 'dom-access','populate-songs','get-more-songs'], function($, 
 			});//end addSongs
 
 
+	$(document).on('click', ".song", function(){
+
+		$(this).children('button').css('display', 'block');
+
+	});
+
 
 
 });

@@ -44,17 +44,17 @@
 		      <label for="artist">Artist:</label>
 		      <input list="artist_list" name="artist" placeholder="Artist">
 			      <datalist id="artist_list">
-			        <option value="Daft Punk">
+<!-- 			    <option value="Daft Punk">
 		          <option value="Capital Citites">
 		          <option value="St. Paul and the Broken Bones">
 		          <option value="Robyn">
 			        <option value="Pilot Rouge">
-			      </datalist>
+ -->			      </datalist>
 
 		      <label for="album">Album:</label>
 		      <input list="album_list" name="album" placeholder="Album">
 			      <datalist id="album_list">
-			        <option value="Random Access Memories - Daft Punk">
+			        <!-- <option value="Random Access Memories - Daft Punk">
 			        <option value="Discovery - Daft Punk">
 			        <option value="Human After All - Daft Punk">
 			        <option value="In a Tidal Wave of Mystery - Capital Cities">
@@ -62,14 +62,14 @@
 			        <option value="Robyn - Robyn">
 			        <option value="Body Talk - Robyn">
 			        <option value="Do It Again - Robyn">
-			        <option value="Legends - Pilot Rouge">
+			        <option value="Legends - Pilot Rouge"> -->
 			      </datalist>
 
 		      <label for="genre">Genre:</label>
 
-		      <div class="checkboxes row">
+		      <div class="checkboxes row" id="genres">
 
-						<div class="checkbox col-xs-12 col-sm-5">
+						<!-- <div class="checkbox col-xs-12 col-sm-5">
 			        <input type="checkbox" name="rock" value="rock" />
 			        <p>Rock</p>
 			      </div>
@@ -98,7 +98,7 @@
 			        <input type="checkbox" name="hop_hop" value="hip_hop" />
 			        <p>HipHop</p>
 						</div>
-
+ -->
 		     	 </div>
 
 		      	<button>Filter</button>
@@ -112,29 +112,21 @@
 
 		    	<div class="wrapper" id="addSongsHere">
 
-<!-- example formating below -->
+<!-- example formating from Handlebars below -->
 
 		 <!--
 
-		   <h3>Doin' It Right</h3>
-		    <p>Daft Punk</p> |
-		    <p>Random Access Memories</p> |
-		    <p>Electro Pop</p> -->
+{{#each songs}}
 
-		  <!--   <h3>Fembot</h3>
-		    <p>Robyn</p> |
-		    <p>Body Talk</p> |
-		    <p>Pop</p> -->
+	<div class="song">
 
-<!-- 		    <h3>Ferrah Fawcett Hair</h3>
-		    <p>Capital Cities</p> |
-		    <p>In a Tidal Wave of Mystery</p> |
-		    <p>Indie Pop</p> -->
-<!--
-		    <h3>Sunrust</h3>
-		    <p>Pilot Rouge</p> |
-		    <p>Legends</p> |
-		    <p>Indie Rock</p>
+	<h3>{{ title }}</h3>
+ 	<p>{{ artist }} on {{ album }} - {{ genre }} </p>
+ 	<button class="remove">Remove</button>
+</div>
+
+{{/each}}
+
 		     -->
 		  		</div>
 		  		<button id="addMoreSongs">Add More Songs</button>

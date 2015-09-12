@@ -1,18 +1,77 @@
 define(['jquery'], function($) {
 
+
 	return {
+
 
 		removeSong : function(){
 			$(this).parent().remove();
 		}, //end remove song
 
-		addSongsToDOM : function(songs){
-
-				var historyDiv = $('#addSongsHere');
+			addSongsToDOM : function(songs){
 
 			require(['hbs!../templates/songs'], function(songTemplate) {
-        historyDiv.html(songTemplate(songs));
+        $('#addSongsHere').html(songTemplate(songs));
       });
+
+			require(['hbs!../templates/artistList'], function(artistTemplate) {
+        $('#artist_list').append(artistTemplate(songs));
+
+        var populatedArtists = [];
+
+
+      	$('#artist_list').children('option').each(function(index, element){
+
+      		if (populatedArtists.indexOf(element.value) === -1) {
+      			populatedArtists.push(element.value)
+      		} else {
+      			element.remove();
+      		}
+		   	});
+
+
+      });
+
+      require(['hbs!../templates/albumList'], function(albumTemplate) {
+        $('#album_list').append(albumTemplate(songs));
+
+        var populatedAlbums =[];
+
+      	$('#album_list').children('option').each(function(index, element){
+
+      		if (populatedAlbums.indexOf(element.value) === -1) {
+      			populatedAlbums.push(element.value)
+      		} else {
+      			element.remove();
+      		}
+
+		   	});
+
+
+      });
+
+
+
+      require(['hbs!../templates/genreList'], function(genreTemplate) {
+        $('#genres').append(genreTemplate(songs));
+
+        var populatedGenres =[];
+
+      	$('#genres').children('div').children('input').each(function(index, element){
+
+      		if (populatedGenres.indexOf(element.value) === -1) {
+      			populatedGenres.push(element.value)
+      		} else {
+      			console.log(element);
+      			$(this).parent().remove();
+      		}
+
+				});
+
+
+      });
+
+
 
 			/*
 				//declare variables
