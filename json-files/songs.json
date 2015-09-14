@@ -59,6 +59,36 @@
 			"artist": "Taylor Swift",
 			"album": "1989",
 			"genre": "Pop"
+		},
+		{
+			"title": "Budapest",
+			"artist": "George Ezra",
+			"album": "Wanted on Voyage",
+			"genre": "Pop"
+		},
+		{
+			"title": "Doin' It Right",
+			"artist": "Daft Punk",
+			"album": "Random Access Memories",
+			"genre": "Electro-Pop"
+		},
+		{
+			"title": "Fembot",
+			"artist": "Robyn",
+			"album": "Body Talk",
+			"genre": "Pop"
+		},
+		{
+			"title": "Ferrah Fawcett Hair",
+			"artist": "Capital Cities",
+			"album": "In a Tidal Wave of Mystery",
+			"genre": "Indie Pop"
+		},
+		{
+			"title": "Sunrust",
+			"artist": "Pilot Rouge",
+			"album": "Legends",
+			"genre": "Indie Rock"
 		}
 	]
 }

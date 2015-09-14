@@ -1,10 +1,12 @@
-require(['jquery', 'dom-access','populate-songs','get-more-songs'], function($, domAccess, populateSongs, getMoreSongs) {
+require(['jquery', 'dom-access','populate-songs', 'add-song', 'remove-song'], function($, domAccess, populateSongs, addSong, removeSong) {
 
 
 
-	$(document).on('click', ".remove", domAccess.removeSong);
+	$(document).on('click', ".remove", removeSong.removeSong);
 
-	$('#addMoreSongs').css('display', 'none');
+	$(document).on('click', ".song", function(){
+		$(this).children('.remove').css('display', 'block');
+	});
 
 	$('#addSongs').click(function(e){
 					 e.preventDefault();
@@ -12,24 +14,14 @@ require(['jquery', 'dom-access','populate-songs','get-more-songs'], function($, 
 
 					populateSongs.getSongs(domAccess.addSongsToDOM);
 					$('#addSongs').css('display', 'none');
-					$('#addMoreSongs').css('display', 'inline-block');
 
 			});//end addSongs
 
-	$('#addMoreSongs').click(function(e){
-					 e.preventDefault();
-					getMoreSongs.getSongs(domAccess.addSongsToDOM);
-					$('#addMoreSongs').css('display', 'none');
+	$('#add-song').click(function(e){
+				e.preventDefault();
 
-			});//end addSongs
-
-
-	$(document).on('click', ".song", function(){
-
-		$(this).children('button').css('display', 'block');
-
-	});
-
+				addSong.addSong();
+			});//end addSong
 
 
 });

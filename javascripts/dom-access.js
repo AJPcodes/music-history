@@ -3,11 +3,6 @@ define(['jquery'], function($) {
 
 	return {
 
-
-		removeSong : function(){
-			$(this).parent().remove();
-		}, //end remove song
-
 			addSongsToDOM : function(songs){
 
 			require(['hbs!../templates/songs'], function(songTemplate) {
@@ -23,7 +18,7 @@ define(['jquery'], function($) {
       	$('#artist_list').children('option').each(function(index, element){
 
       		if (populatedArtists.indexOf(element.value) === -1) {
-      			populatedArtists.push(element.value)
+      			populatedArtists.push(element.value);
       		} else {
       			element.remove();
       		}
@@ -40,7 +35,7 @@ define(['jquery'], function($) {
       	$('#album_list').children('option').each(function(index, element){
 
       		if (populatedAlbums.indexOf(element.value) === -1) {
-      			populatedAlbums.push(element.value)
+      			populatedAlbums.push(element.value);
       		} else {
       			element.remove();
       		}
@@ -60,9 +55,9 @@ define(['jquery'], function($) {
       	$('#genres').children('div').children('input').each(function(index, element){
 
       		if (populatedGenres.indexOf(element.value) === -1) {
-      			populatedGenres.push(element.value)
+      			populatedGenres.push(element.value);
       		} else {
-      			console.log(element);
+
       			$(this).parent().remove();
       		}
 

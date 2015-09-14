@@ -113,10 +113,17 @@ nav a:hover{
 // 	margin: 1em 0.5em;
 // }
 
-.selector .checkboxes p {
+.selector .checkboxes label {
   font-size: 1em;
-  line-height: 2em;
+  line-height: 1em;
   text-align: center;
+  display: inline-block;
+}
+
+.checkboxes input{
+
+	display: inline-block;
+
 }
 
 .selector .checkbox {
@@ -132,19 +139,36 @@ nav a:hover{
 
 /*.History Styles*/
 
-.history {
+.history, .addNew{
 	height: 40em;
 	background-color: $color3;
 	border: $border;
-	border-left: 0px;
 	padding: 5%;
 	overflow: scroll;
+}
+
+.history {
+	border-left: 0px;
 }
 
 .history .wrapper {
   margin: 1em 0;
 
+}
 
+//Add New Songs styles
+
+.addNew {
+
+ 	h3, label, input, button {
+ 		text-align: center;
+		display: block;
+		margin: 1em auto;
+	}
+
+	input {
+		border: 1px solid black;
+	}
 }
 
 .song {
