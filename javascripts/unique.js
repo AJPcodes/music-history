@@ -15,11 +15,17 @@ define(['jquery', 'lodash'], function($,_) {
 											.uniq()
 											.value();
 
+			var uniqueGenres = _.chain(allSongs)
+											.pluck('genre')
+											.uniq()
+											.value();
+
 
 			return {
 				albums: uniqueAlbums,
-				artists: uniqueArtists
+				artists: uniqueArtists,
+				genres: uniqueGenres
 			};
 
-		}
+		};
 });

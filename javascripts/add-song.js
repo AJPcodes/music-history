@@ -9,7 +9,7 @@ define(['jquery', 'firebase'], function($, fb) {
 
 		addSong : function() {
 
-			console.log('all linked up');
+
 
 						 // CREATE A REFERENCE TO FIREBASE
 
@@ -34,7 +34,7 @@ define(['jquery', 'firebase'], function($, fb) {
 				album: newAlbum,
 				genre: newGenre
 				}
-		  )
+		  );
 
 		 	songTitleField.val('');
 		  artistField.val('');

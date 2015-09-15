@@ -19,7 +19,7 @@ define(['jquery', 'firebase'], function($, fb) {
  	 				allSongsSnapShot.forEach(function(songSnapShot) {
 
     				if (songSnapShot.child('title').val() == theSongTitle){
-    						console.log('found a match')
+
     						key = songSnapShot.key();
 
     					} //end if
@@ -37,7 +37,7 @@ define(['jquery', 'firebase'], function($, fb) {
 
 			}//end remove song
 
-	}//end return statement
+	};//end return statement
 
 }); //end define statement
 

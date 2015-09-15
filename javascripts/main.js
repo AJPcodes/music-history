@@ -13,7 +13,7 @@ require(['jquery', 'dom-access','populate-songs', 'add-song', 'remove-song'], fu
 
 
 					populateSongs.getSongs(domAccess.addSongsToDOM);
-					$('#addSongs').css('display', 'none');
+				//	$('#addSongs').css('display', 'none');
 
 			});//end addSongs
 
