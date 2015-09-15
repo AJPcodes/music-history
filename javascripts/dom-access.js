@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery','unique'], function($, unique) {
 
 
 	return {
@@ -9,40 +9,17 @@ define(['jquery'], function($) {
         $('#addSongsHere').html(songTemplate(songs));
       });
 
+      var uniqueAlbums = unique(songs.songs).albums;
+
 			require(['hbs!../templates/artistList'], function(artistTemplate) {
-        $('#artist_list').append(artistTemplate(songs));
+        $('#artist_list').append(artistTemplate({artists: uniqueArtists}));
 
-        var populatedArtists = [];
+        });
 
-
-      	$('#artist_list').children('option').each(function(index, element){
-
-      		if (populatedArtists.indexOf(element.value) === -1) {
-      			populatedArtists.push(element.value);
-      		} else {
-      			element.remove();
-      		}
-		   	});
-
-
-      });
+      var uniqueArtists = unique(songs.songs).artists;
 
       require(['hbs!../templates/albumList'], function(albumTemplate) {
-        $('#album_list').append(albumTemplate(songs));
-
-        var populatedAlbums =[];
-
-      	$('#album_list').children('option').each(function(index, element){
-
-      		if (populatedAlbums.indexOf(element.value) === -1) {
-      			populatedAlbums.push(element.value);
-      		} else {
-      			element.remove();
-      		}
-
-		   	});
-
-
+        $('#album_list').append(albumTemplate({albums:uniqueAlbums}));
       });
 
 
@@ -66,31 +43,7 @@ define(['jquery'], function($) {
 
       });
 
-
-
-			/*
-				//declare variables
-				var title = "";
-				var artist = "";
-				var album = "";
-				var genre = "";
-
-			//iterate over songs array
-				$.each(songs, function(e, song){
-
-				title = song.title;
-				artist = song.artist;
-				album = song.album;
-				genre = song.genre;
-
-				historyDiv.append("<div class='song'><h3>" + title + "</h3> <p> " + artist + "</p> | <p>" + album + "</p> | <p> " + genre +" </p> <button class='remove'>Remove</button></div>");
-
-			 });//end each loop
-			*/
-
 			}// end add songs to DOM
-
-
 
 	}; //end return
 });
