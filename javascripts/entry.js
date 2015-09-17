@@ -10,9 +10,12 @@ requirejs.config({
 	},
 
 "shim": {
-        "bootstrap": ["jquery"]
+        "bootstrap": ["jquery"],
+        "firebase": {
+        		exports: 'Firebase'
+        }
   }
 
 });
 
-require(['jquery','hbs','bootstrap', 'firebase', "lodash",'main'], function($, Handlebars, bootstrap, _, main) {} );
+require(['jquery','hbs','bootstrap', 'firebase', "lodash",'main'], function($, Handlebars, bootstrap, fb, _, main) {} );

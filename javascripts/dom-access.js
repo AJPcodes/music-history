@@ -5,30 +5,29 @@ define(['jquery','unique'], function($, unique) {
 
 			addSongsToDOM : function(songs){
 
+
 			require(['hbs!../templates/songs'], function(songTemplate) {
         $('#addSongsHere').html(songTemplate(songs));
       });
 
       var uniqueArtists = unique(songs.songs).artists;
-      console.log(uniqueArtists);
 
 
       require(['hbs!../templates/artistList'], function(artistTemplate) {
-        $('#artist_list').append(artistTemplate({artists: uniqueArtists}));
+        $('#artist_list').html(artistTemplate({artists: uniqueArtists}));
 
         });
 
       var uniqueAlbums = unique(songs.songs).albums;
-      console.log(uniqueAlbums);
 
       require(['hbs!../templates/albumList'], function(albumTemplate) {
-        $('#album_list').append(albumTemplate({albums:uniqueAlbums}));
+        $('#album_list').html(albumTemplate({albums:uniqueAlbums}));
       });
 
       var uniqueGenres = unique(songs.songs).genres;
 
       require(['hbs!../templates/genreList'], function(genreTemplate) {
-        $('#genres').append(genreTemplate({genres:uniqueGenres}));
+        $('#genres').html(genreTemplate({genres:uniqueGenres}));
 
 				});
 

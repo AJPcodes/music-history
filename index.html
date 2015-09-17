@@ -36,33 +36,21 @@
 		<div class="row">
 		  <div class="selector col-sm-3">
 
-		    <form action="form.html" method="post">
+
 
 		      <label for="song_length">Song Length:</label>
 		      <input type="range" name="song_length" min="0" max="240" step="1" value="0" />
 
 		      <label for="artist">Artist:</label>
-		      <input id='artistInput' list="artist_list" name="artist" placeholder="Artist">
+		      <input id='artistInput' list="artist_list" name="artist"  value="All">
 			      <datalist id="artist_list">
-<!-- 			    <option value="Daft Punk">
-		          <option value="Capital Citites">
-		          <option value="St. Paul and the Broken Bones">
-		          <option value="Robyn">
-			        <option value="Pilot Rouge">
- -->			      </datalist>
+						<!-- auto populates -->
+			      </datalist>
 
 		      <label for="album">Album:</label>
-		      <input id='albumInput' list="album_list" name="album" placeholder="Album">
+		      <input id='albumInput' list="album_list" name="album" value="All">
 			      <datalist id="album_list">
-			        <!-- <option value="Random Access Memories - Daft Punk">
-			        <option value="Discovery - Daft Punk">
-			        <option value="Human After All - Daft Punk">
-			        <option value="In a Tidal Wave of Mystery - Capital Cities">
-			        <option value="Half the City - St. Paul and the Broken Bones">
-			        <option value="Robyn - Robyn">
-			        <option value="Body Talk - Robyn">
-			        <option value="Do It Again - Robyn">
-			        <option value="Legends - Pilot Rouge"> -->
+			     <!-- auto populates -->
 			      </datalist>
 
 		      <label for="genre">Genre:</label>
@@ -101,9 +89,10 @@
  -->
 		     	 </div>
 
-		      	<button>Filter</button>
+		      	<button id="filterSongs">Filter</button>
 
-		    	</form>
+
+
 
 				</div>
 
@@ -130,7 +119,7 @@
 		     -->
 		  		</div>
 
-				 <button id="addSongs">Populate Songs</button>
+
 			</div>
 		</div>
 
