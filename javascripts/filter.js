@@ -9,19 +9,20 @@ define(['jquery', 'lodash'], function($,_) {
 
         var artistFilter = $('#artistInput').val();
         var albumFilter = $('#albumInput').val();
+        var filteredSongs = songs.songs;
 
         if(artistFilter != "All"){
 
-          var filteredSongs = _.filter(songs.songs, function(n) {
+          filteredSongs = _.filter(songs.songs, function(n) {
               return n.artist === artistFilter;
           });
 
 
         } else {
 
-         var filteredSongs = songs.songs;
+         filteredSongs = songs.songs;
 
-        };
+        }
 
 
 
@@ -29,37 +30,38 @@ define(['jquery', 'lodash'], function($,_) {
           filteredSongs = _.filter(filteredSongs, function(n) {
               return n.album === albumFilter;
           });
-       }
+        }
 
 
-      var checkedGenres = $('#genres').children('div').children('input')
+        var checkedGenres = $('#genres').children('div').children('input');
 
-      checkedGenres =  checkedGenres.filter(function(index, element){
+        checkedGenres =  checkedGenres.filter(function(index, element){
 
-        return element.checked;
+         return element.checked;
 
-      });
+         });
 
 
-       var checkedGenres = _.pluck(checkedGenres, 'value');
+        checkedGenres = _.pluck(checkedGenres, 'value');
 
-      console.log(checkedGenres);
 
-      checkedGenres.forEach( function(element){
-        console.log(element);
 
-          filteredSongs = _.filter(filteredSongs, function(n) {
-              return n.genre === element;
+
+         filteredSongs = _.filter(filteredSongs, function(element, index){
+
+            if (checkedGenres.indexOf(element.genre) != -1){
+              return true;
+            }
           });
 
-      });
-
-      require(['hbs!../templates/songs'], function(songTemplate) {
-        $('#addSongsHere').html(songTemplate({songs: filteredSongs}));
-      });
 
 
-			}// filter
+        require(['hbs!../templates/songs'], function(songTemplate) {
+            $('#addSongsHere').html(songTemplate({songs: filteredSongs}));
+         });
+
+
+			}// filter songs
 
 	}; //end return
 
