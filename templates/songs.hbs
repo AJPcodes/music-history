@@ -4,7 +4,8 @@
 
 	<h3>{{ title }}</h3>
  	<p>{{ artist }} on {{ album }} - {{ genre }} </p>
- 	<button class="remove">Remove</button>
+ 	<button class="btn btn-default edit" id="edit#{{ @key }}">Edit</button>
+ 	<button class="btn btn-default remove" id="remove#{{ @key }}">Remove</button>
 </div>
 
 {{/each}}

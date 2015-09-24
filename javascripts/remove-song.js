@@ -1,37 +1,17 @@
 define(['jquery', 'firebase'], function($, fb) {
 
 
-	var songListRef = new Firebase('https://ajpmusichistory.firebaseio.com/songs/songs');
 
 	return {
 
 		removeSong : function(){
 
 
+				var key = this.id.split('#')[1];
 
-				var theSongTitle = $(this).siblings('h3')[0].innerText;
-				console.log(theSongTitle);
+ 				var songToRemove = new Firebase('https://ajpmusichistory.firebaseio.com/songs/songs/' + key);
+				songToRemove.remove();
 
-				var key = "";
-
-				songListRef.once("value", function(allSongsSnapShot) {
-
- 	 				allSongsSnapShot.forEach(function(songSnapShot) {
-
-    				if (songSnapShot.child('title').val() == theSongTitle){
-
-    						key = songSnapShot.key();
-
-    					} //end if
-
-  					}); //end for each
-
- 	 				var songToRemove = new Firebase('https://ajpmusichistory.firebaseio.com/songs/songs/' + key);
-					songToRemove.remove();
-
-				});//end once
-
-				console.log(key);
 
 				$(this).parent().remove();
 

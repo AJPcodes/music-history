@@ -1,4 +1,4 @@
-require(['jquery', 'firebase','dom-access','add-song', 'remove-song', 'filter'], function($, fb, domAccess, addSong, removeSong, filter) {
+require(['jquery', 'firebase','dom-access','add-song', 'remove-song', 'edit-song', 'filter'], function($, fb, domAccess, addSong, removeSong, editSong, filter) {
 
 
 	var songsRef = new Firebase('https://ajpmusichistory.firebaseio.com/songs');
@@ -12,9 +12,13 @@ require(['jquery', 'firebase','dom-access','add-song', 'remove-song', 'filter'],
 
 
 	$(document).on('click', ".remove", removeSong.removeSong);
+	$(document).on('click', ".edit", editSong.editSong);
+
 
 	$(document).on('click', ".song", function(){
 		$(this).children('.remove').toggle('display');
+		$(this).children('.edit').toggle('display');
+
 	});
 
 

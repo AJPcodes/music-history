@@ -1,7 +1,7 @@
 define(['jquery', 'firebase'], function($, fb) {
 
 
-	var songListRef = new Firebase('https://ajpmusichistory.firebaseio.com/songs/songs');
+	// var songListRef = new Firebase('https://ajpmusichistory.firebaseio.com/songs/songs');
 
 
 	return {
@@ -20,21 +20,36 @@ define(['jquery', 'firebase'], function($, fb) {
 		  var albumField = $('#album');
 		  var genreField = $('#genre');
 
-		  //FIELD VALUES
-		  var newSongTitle = songTitleField.val();
-		  var newArtist = artistField.val();
-		  var newAlbum = albumField.val();
-		  var newGenre = genreField.val();
+
+		  var newSong = {
+		  	"title": songTitleField.val(),
+			"artist": artistField.val(),
+			"album": albumField.val(),
+			"genre": genreField.val()
+
+		  };
+
+
+		  $.ajax({
+		  	url: "https://ajpmusichistory.firebaseio.com/songs/songs.json",
+		  	method: "POST",
+		  	data: JSON.stringify(newSong)
+		  }).done(function(addedSong){
+		  		console.log(addedSong);
+		  });
+
+
+
 
 		   //SAVE DATA TO FIREBASE AND EMPTY FIELD
-		  songListRef.push(
-		  	{
-				title: newSongTitle,
-				artist: newArtist,
-				album: newAlbum,
-				genre: newGenre
-				}
-		  );
+		  // songListRef.push(
+		  // 	{
+		//		title: songTitleField.val(),
+		//	artist: artistField.val(),
+		//	album: albumField.val(),
+		//	genre: genreField.val()
+				// }
+		  // );
 
 		 	songTitleField.val('');
 		  artistField.val('');

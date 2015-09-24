@@ -11,44 +11,57 @@
 	</head>
 
 	<body>
+
+
 	<div class="container-fluid">
 
 	<div class="row">
-		<div class="col-sm-12">
 
-		  <nav class='row'>
+		  <nav class="navbar navbar-default">
 
-		    <a href="index.html" class="selected col-sm-3 col-sm-offset-1 col-xs-12">View Music</a>
-		    <a href="song-form.html" class='col-sm-3 col-xs-12'>Add Music</a>
-		    <a href="#" class='col-sm-3 col-xs-12'>Profile</a>
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+   		 <div class="navbar-header">
+     		 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        	<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+       		 <span class="icon-bar"></span>
+       		 <span class="icon-bar"></span>
+      	</button>
+      	<a class="navbar-brand" href="#">Brand</a>
+    		</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+			  	<ul class="nav navbar-nav">
+
+				    <li role="presentation"><a href="index.html" class="selected">View Music</a></li>
+				    <li role="presentation"><a href="song-form.html">Add Music</a></li>
+						<li role="presentation"><a href="#">Profile</a></li>
+
+					</ul>
+
+
+				</div>
 
 		  </nav>
 
-		<!--   <nav class="hidden">
-		    <a href="#" class="selected">View Music</a> |
-		    <a href="#">Add Music</a> |
-		    <a href="#">Profile</a>
-	  </nav>
- -->
 		</div>
-	</div>
+
 
 		<div class="row">
 		  <div class="selector col-sm-3">
 
 
-
-		      <label for="song_length">Song Length:</label>
-		      <input type="range" name="song_length" min="0" max="240" step="1" value="0" />
-
 		      <label for="artist">Artist:</label>
-		      <input id='artistInput' list="artist_list" name="artist"  value="All">
+		      <input id='artistInput' list="artist_list" name="artist"  value="All" class="form-control">
 			      <datalist id="artist_list">
 						<!-- auto populates -->
 			      </datalist>
 
 		      <label for="album">Album:</label>
-		      <input id='albumInput' list="album_list" name="album" value="All">
+		      <input id='albumInput' list="album_list" name="album" value="All" class="form-control">
 			      <datalist id="album_list">
 			     <!-- auto populates -->
 			      </datalist>
@@ -57,39 +70,10 @@
 
 		      <div class="checkboxes row" id="genres">
 
-						<!-- <div class="checkbox col-xs-12 col-sm-5">
-			        <input type="checkbox" name="rock" value="rock" />
-			        <p>Rock</p>
-			      </div>
 
-						<div class="checkbox col-xs-12 col-sm-5">
-			        <input type="checkbox" name="pop" value="pop" />
-			        <p>Pop</p>
-						</div>
-
-						<div class="checkbox col-xs-12 col-sm-5">
-			        <input type="checkbox" name="blues" value="blues" />
-			        <p>Blues</p>
-						</div>
-
-						<div class="checkbox col-xs-12 col-sm-5">
-			        <input type="checkbox" name="classical" value="classical" />
-			        <p>Classical</p>
-						</div>
-
-						<div class="checkbox col-xs-12 col-sm-5">
-			        <input type="checkbox" name="jazz" value="jazz" />
-			        <p>Jazz</p>
-						</div>
-
-						<div class="checkbox col-xs-12 col-sm-5">
-			        <input type="checkbox" name="hop_hop" value="hip_hop" />
-			        <p>HipHop</p>
-						</div>
- -->
 		     	 </div>
 
-		      	<button id="filterSongs">Filter</button>
+		      	<button class="btn btn-default" id="filterSongs">Filter</button>
 
 
 
@@ -101,22 +85,7 @@
 
 		    	<div class="wrapper" id="addSongsHere">
 
-<!-- example formating from Handlebars below -->
 
-		 <!--
-
-{{#each songs}}
-
-	<div class="song">
-
-	<h3>{{ title }}</h3>
- 	<p>{{ artist }} on {{ album }} - {{ genre }} </p>
- 	<button class="remove">Remove</button>
-</div>
-
-{{/each}}
-
-		     -->
 		  		</div>
 
 

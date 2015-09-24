@@ -5,10 +5,62 @@ $font-color: black;
 $color1: rgba(37,154,63,0.25); //nav bar green
 $color2: rgba(150,155,175,0.25);//grey
 $color3: rgba(245,245,23,0.25);//yellow
-$songBackGround1: rgba(145,162,228,0.5); //off-white
-$songBackGround2: rgba(150,155,175,0.5); //off-off-white
+
+$color1op: rgba(37,154,63,0.90); //nav bar green
+$color2op: rgba(150,155,175,0.90);//grey
+$color3op: rgba(245,245,23,0.90);//yellow
+
+$songBackGround1: rgba(145,162,228,0.4);  //purple?
+$songBackGround2: rgba(150,155,175,0.4); //lighter purple?
+
+$songBackGround1op: rgba(145,162,228,0.9);
+$songBackGround2op: rgba(150,155,175,0.9);
+
 $border: 4px solid black;
 $mainBackground: url("./../pics/background-fractals1.jpg");
+
+
+
+// MIXINS!
+@mixin transform($degrees) {
+		-moz-transform:    $degrees;
+    -o-transform:      $degrees;
+    -webkit-transform: $degrees;
+    transform:         $degrees;
+
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
 
 
 
@@ -29,33 +81,35 @@ nav, div.selector, div.history {
 	box-sizing: border-box;
 }
 
-button {
+button.btn-default {
 	padding: 5px;
 	margin: 0.5em auto 0.5em;
 	border: 1px solid black;
+	background-color: $color2;
 }
 
 /*Nav Stlyes*/
 
-nav {
+nav.navbar {
 	background-color:  $color1;
-	margin-top: 0;
+	margin: 0;
 	line-height: 4.5em;
 	padding: 0 3%;
 	// position: fixed;
 	border: $border;
-	border-bottom: 0px;
 	height: 5em;
 
 }
 
 
-nav a {
+nav a.btn-default {
 	font-size: 1.25em;
 	padding: 0 25px;
 	text-align: center;
+	background-color: $color2;
 	color: white;
 	text-shadow: 2px 2px black;
+	@include transition(color 1.5s, transform 1.5s);
 }
 
 nav a.selected {
@@ -65,9 +119,9 @@ nav a.selected {
 
 nav a:hover{
 	text-decoration: none;
-	font-size: 1.5em;
 	color: black;
 	text-shadow: 2px 2px white;
+	@include transform(rotate(360deg));
 }
 
 
@@ -175,13 +229,20 @@ nav a:hover{
 .song {
 	background-color: $songBackGround1;
 	padding: 1em;
+	@include transition(background-color 2s);
 }
+
+.song:hover {background-color: $songBackGround1op;}
 
 .song:nth-child(2n+1) {
 	background-color: $songBackGround2;
 	padding: 1em;
+	@include transition(background-color 2s);
 }
 
+.song:nth-child(2n+1):hover {
+	background-color: $songBackGround2op;
+}
 
 
 .history .song:nth-child(2n+1) h3,
@@ -220,7 +281,7 @@ nav a:hover{
 
 }
 
-.history button.remove {
+.history button.remove, .history button.edit {
 	display: none;
 }
 

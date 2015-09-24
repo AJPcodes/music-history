@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.5",
     "require-handlebars-plugin": "~1.0.0",
     "firebase": "~2.2.9",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
+    "q": "~2.0.2"
   }
 }
