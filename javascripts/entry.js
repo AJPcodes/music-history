@@ -14,9 +14,12 @@ requirejs.config({
         'bootstrap': ['jquery'],
         'firebase': {
         		exports: 'Firebase'
-        }
-  }
+        },
+
+       }
 
 });
 
-require(['jquery','hbs','bootstrap', 'firebase', 'lodash','main'], function($, Handlebars, bootstrap, fb, _, main) {} );
+require(['jquery','hbs','bootstrap', 'q', 'firebase', 'lodash','main'], function($, Handlebars, bootstrap, Q, fb, _, main) {
+
+} );
