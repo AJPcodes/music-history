@@ -1,4 +1,4 @@
-require(['jquery', 'firebase', 'q','dom-access','add-song', 'remove-song', 'edit-song', 'filter', 'getSongs'], function($, fb, Kyu, domAccess, addSong, removeSong, editSong, filter, getSongs) {
+require(['jquery', 'firebase', 'q','dom-access','add-song', 'remove-song', 'edit-song', 'filter', 'getSongs'], function($, fb, Q, domAccess, addSong, removeSong, editSong, filter, getSongs) {
 
 
 	//var songsRef = new Firebase('https://ajpmusichistory.firebaseio.com/songs');
