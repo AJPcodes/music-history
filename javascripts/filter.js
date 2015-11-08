@@ -17,14 +17,7 @@ define(['jquery', 'lodash'], function($,_) {
               return n.artist === artistFilter;
           });
 
-
-        } else {
-
-         filteredSongs = songs.songs;
-
         }
-
-
 
         if(albumFilter != "All") {
           filteredSongs = _.filter(filteredSongs, function(n) {
@@ -32,7 +25,7 @@ define(['jquery', 'lodash'], function($,_) {
           });
         }
 
-
+        //builds an array of checked  Genres
         var checkedGenres = $('#genres').children('div').children('input');
 
         checkedGenres =  checkedGenres.filter(function(index, element){
@@ -41,12 +34,10 @@ define(['jquery', 'lodash'], function($,_) {
 
          });
 
-
+        //build an array of the checked genres values
         checkedGenres = _.pluck(checkedGenres, 'value');
 
-
-
-
+        //only return songs who's genre matches the filtered songs array
          filteredSongs = _.filter(filteredSongs, function(element, index){
 
             if (checkedGenres.indexOf(element.genre) != -1){
@@ -54,8 +45,7 @@ define(['jquery', 'lodash'], function($,_) {
             }
           });
 
-
-
+         //populate DOM with filtered songs
         require(['hbs!../templates/songs'], function(songTemplate) {
             $('#addSongsHere').html(songTemplate({songs: filteredSongs}));
          });

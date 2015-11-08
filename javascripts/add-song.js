@@ -20,7 +20,7 @@ define(['jquery', 'firebase'], function($, fb) {
 		  var albumField = $('#album');
 		  var genreField = $('#genre');
 
-
+		  //build new song object
 		  var newSong = {
 		  	"title": songTitleField.val(),
 			"artist": artistField.val(),
@@ -29,7 +29,7 @@ define(['jquery', 'firebase'], function($, fb) {
 
 		  };
 
-
+		  	//post song to firebase
 		  $.ajax({
 		  	url: "https://ajpmusichistory.firebaseio.com/songs/songs.json",
 		  	method: "POST",
@@ -39,9 +39,7 @@ define(['jquery', 'firebase'], function($, fb) {
 		  });
 
 
-
-
-		   //SAVE DATA TO FIREBASE AND EMPTY FIELD
+		   //SAVE DATA TO FIREBASE
 		  // songListRef.push(
 		  // 	{
 		//		title: songTitleField.val(),
@@ -51,6 +49,7 @@ define(['jquery', 'firebase'], function($, fb) {
 				// }
 		  // );
 
+		//CLEAR FORM
 		 	songTitleField.val('');
 		  artistField.val('');
 		  albumField.val('');
