@@ -6,7 +6,7 @@ requirejs.config({
 'hbs': '../lib/bower_components/require-handlebars-plugin/hbs',
 'firebase': '../lib/bower_components/firebase/firebase',
 'lodash': '../lib/bower_components/lodash/lodash.min',
-'q': '../lib/bower_components/q/q'
+'Q': '../lib/bower_components/q/q'
 
 	},
 
@@ -20,6 +20,6 @@ requirejs.config({
 
 });
 
-require(['jquery','hbs','bootstrap', 'q', 'firebase', 'lodash','main'], function($, Handlebars, bootstrap, Q, fb, _, main) {
+require(['jquery','hbs','bootstrap', 'Q', 'firebase', 'lodash','main'], function($, Handlebars, bootstrap, Q, fb, _, main) {
 
 } );

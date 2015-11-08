@@ -7,7 +7,8 @@ define(['jquery','unique'], function($, unique) {
 
 
 			require(['hbs!../templates/songs'], function(songTemplate) {
-        $('#addSongsHere').html(songTemplate(songs));
+
+        $('#addSongsHere').html(songTemplate({"songs": songs.songs}));
       });
 
       var uniqueArtists = unique(songs.songs).artists;

@@ -1,4 +1,4 @@
-require(['jquery', 'firebase', 'q','dom-access','add-song', 'remove-song', 'edit-song', 'filter', 'getSongs'], function($, fb, Q, domAccess, addSong, removeSong, editSong, filter, getSongs) {
+require(['jquery', 'firebase', 'Q','dom-access','add-song', 'remove-song', 'edit-song', 'filter', 'getSongs'], function($, fb, Q, domAccess, addSong, removeSong, editSong, filter, getSongs) {
 
 
 	//var songsRef = new Firebase('https://ajpmusichistory.firebaseio.com/songs');
@@ -9,8 +9,9 @@ require(['jquery', 'firebase', 'q','dom-access','add-song', 'remove-song', 'edit
 	// 					domAccess.addSongsToDOM(songs);
 	// 			});
 
-	getSongs.getSongs().then(function(json_data){
-			console.log(json_data);
+	var songsPromise = getSongs.getSongs();
+
+	songsPromise.then(function(json_data){
 			domAccess.addSongsToDOM(json_data);
 	});
 
@@ -34,8 +35,10 @@ require(['jquery', 'firebase', 'q','dom-access','add-song', 'remove-song', 'edit
 	$('#filterSongs').click(function(e){
 			e.preventDefault();
 
-			filter.filterSongs(songs);
-		});//end addSong
+			songsPromise.then(function(json_data){
+				filter.filterSongs(json_data);
+		});
+	});//end addSong
 
 
 

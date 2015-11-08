@@ -1,4 +1,4 @@
-define(['jquery', 'q'], function($, Q) {
+define(['jquery', 'Q'], function($, Q) {
 
 
 	return {
@@ -8,7 +8,7 @@ define(['jquery', 'q'], function($, Q) {
       var deferred = Q.defer();
 
         $.ajax({
-          url: "https://ajpmusichistory.firebaseio.com/songs/songs.json",
+          url: "https://ajpmusichistory.firebaseio.com/songs/.json",
           type: "GET"
          }).done(function(data) {
             deferred.resolve(data);

@@ -1,4 +1,4 @@
-define(['jquery', 'firebase'], function($, fb) {
+define(['jquery', 'Q'], function($, Q) {
 
 
 
@@ -8,50 +8,86 @@ define(['jquery', 'firebase'], function($, fb) {
 
 
 				var key = this.id.split('#')[1];
- 				var songToEdit = new Firebase('https://ajpmusichistory.firebaseio.com/songs/songs/' + key);
+
+ 				var editPromise = function(){
+
+			      var deferred = Q.defer();
+
+			        $.ajax({
+			          url: 'https://ajpmusichistory.firebaseio.com/songs/songs/' + key + '.json',
+			          type: "GET"
+			         }).done(function(data) {
+			            deferred.resolve(data);
+			          }).fail(function(xhr, status, error) {
+			      deferred.reject(error);
+			          });
+
+			          return deferred.promise;
+
+						};// end song to Edit
+
+				var songToEdit = editPromise();
+
+ 				console.log(key);
 
  				var title = '';
 				var artist = '';
 				var album = '';
 				var genre = '';
 
-				songToEdit.once("value", function(snapshot) {
-
-  					title = snapshot.val().title;
-  					artist = snapshot.val().artist;
-  					album = snapshot.val().album;
-  					genre = snapshot.val().genre;
-
-				});
-
-				var newTitle = prompt('New Title? Press Enter to skip.');
-				var newArtist = prompt('New Artist? Press Enter to skip.');
-				var newAlbum = prompt('New Album? Press Enter to skip.');
-				var newGenre = prompt('New Genre? Press Enter to skip.');
+				songToEdit.then(function(snapshot) {
 
 
-				if (newTitle === '') {
-					newTitle = title;
-				}
 
-				if (newArtist === '') {
-					newArtist = artist;
-				}
-
-				if (newAlbum === '') {
-					newAlbum = album;
-				}
-
-				if (newGenre === '') {
-					newGenre = genre;
-				}
+  					title = snapshot.title;
+  					artist = snapshot.artist;
+  					album = snapshot.album;
+  					genre = snapshot.genre;
 
 
- 				songToEdit.set({
-  				title: newTitle,
-  				artist: newArtist,
-  				album: newAlbum,
-  				genre: newGenre
+
+						var newTitle = prompt('New Title? Press Enter to skip.');
+						var newArtist = prompt('New Artist? Press Enter to skip.');
+						var newAlbum = prompt('New Album? Press Enter to skip.');
+						var newGenre = prompt('New Genre? Press Enter to skip.');
+
+
+						if (newTitle === '') {
+							newTitle = title;
+						}
+
+						if (newArtist === '') {
+							newArtist = artist;
+						}
+
+						if (newAlbum === '') {
+							newAlbum = album;
+						}
+
+						if (newGenre === '') {
+							newGenre = genre;
+						}
+
+		 				var editedSong = {
+
+		  					'title': newTitle,
+		  					'artist': newArtist,
+		  					'album': newAlbum,
+		  					'genre': newGenre
+
+						};
+
+						$.ajax({
+			          type: "POST",
+			          url: 'https://ajpmusichistory.firebaseio.com/songs/songs/' + key,
+			          data: editedSong,
+			          dataType: "json",
+
+			         })
+
+
+
+
 				});
 
 
